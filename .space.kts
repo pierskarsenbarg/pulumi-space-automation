@@ -1,9 +1,3 @@
-/**
-* JetBrains Space Automation
-* This Kotlin-script file lets you automate build activities
-* For more info, see https://www.jetbrains.com/help/space/automation.html
-*/
-
 job("Pulumi preview") {
     startOn {
         gitPush { enabled = true }
@@ -22,14 +16,6 @@ job("Pulumi preview") {
                 pulumi stack select dev
                 pulumi preview
             """
-        } 
-
-        //   shellScript {
-        // 	content = """
-        //         python --version
-        //         ls -l
-        //         pwd
-        //     """
-        // }     
+        }    
     }
 }
