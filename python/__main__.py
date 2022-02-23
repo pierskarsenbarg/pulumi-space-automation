@@ -1,10 +1,8 @@
 """A Google Cloud Python Pulumi program"""
 
 import pulumi
-from pulumi_gcp import storage
+import pulumi_random
 
-# Create a GCP resource (Storage Bucket)
-bucket = storage.Bucket('my-bucket', location="US")
-
-# Export the DNS name of the bucket
-pulumi.export('bucket_name', bucket.url)
+password = pulumi_random.RandomPassword("pw",
+                                        length=20
+                                        )
