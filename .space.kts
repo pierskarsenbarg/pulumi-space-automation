@@ -17,6 +17,7 @@ job("Pulumi preview") {
             	python pip install -r requirements.txt
                 source venv/bin/activate
                 pulumi login
+                pulumi stack select dev
                 pulumi preview
             """
         }   
