@@ -5,10 +5,12 @@
 */
 
 job("Pulumi preview") {
-    container(displayName = "Pulumi", image = "pulumi/pulumi") {
+    container(displayName = "Python Pulumi", image = "pulumi/pulumi") {
      	shellScript {
         	content = """
-            	npm ci
+                cd python
+            	python pip install -r requirements.txt
+                source venv/bin/activate
                 pulumi login
                 pulumi preview
             """
