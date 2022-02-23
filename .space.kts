@@ -11,14 +11,20 @@ job("Pulumi preview") {
     container(displayName = "Python Pulumi", image = "pulumi/pulumi-python") {
      	env["PULUMI_ACCESS_TOKEN"] = Secrets("pulumi_access_token")
          
-         shellScript {
+        //  shellScript {
+        // 	content = """
+        //         cd python
+        //     	python3 pip install -r requirements.txt
+        //         pulumi login
+        //         pulumi stack select dev
+        //         pulumi preview
+        //     """
+        // } 
+
+          shellScript {
         	content = """
-                cd python
-            	python3 pip install -r requirements.txt
-                pulumi login
-                pulumi stack select dev
-                pulumi preview
+                python --version
             """
-        }   
+        }     
     }
 }
