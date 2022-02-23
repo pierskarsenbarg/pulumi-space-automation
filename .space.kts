@@ -1,8 +1,8 @@
-job("Pulumi preview") {
+job("Create password") {
     startOn {
         gitPush { enabled = true }
     }
-    container(displayName = "Python Pulumi", image = "pulumi/pulumi-python") {
+    container(displayName = "Run Pulumi", image = "pulumi/pulumi-python") {
      	env["PULUMI_ACCESS_TOKEN"] = Secrets("pulumi_access_token")
          
          shellScript {
@@ -18,7 +18,7 @@ job("Pulumi preview") {
                 pulumi stack output pw --show-secrets
 
                 pulumi destroy -y
-                pulumni stack rm dev
+                pulumi stack rm dev
             """
         }    
     }
