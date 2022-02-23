@@ -5,6 +5,9 @@
 */
 
 job("Pulumi preview") {
+    startOn {
+        gitPush { enabled = true }
+    }
     container(displayName = "Python Pulumi", image = "pulumi/pulumi") {
      	shellScript {
         	content = """
