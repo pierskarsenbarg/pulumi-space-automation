@@ -9,7 +9,9 @@ job("Pulumi preview") {
         gitPush { enabled = true }
     }
     container(displayName = "Python Pulumi", image = "pulumi/pulumi") {
-     	shellScript {
+     	env["PULUMI_ACCESS_TOKEN"] = Secrets("PULUMI_ACCESS_TOKEN")
+         
+         shellScript {
         	content = """
                 cd python
             	python pip install -r requirements.txt
