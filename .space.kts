@@ -12,7 +12,7 @@ job("Create password") {
                 source venv/bin/activate
             	pip install -r requirements.txt
                 pulumi login
-                pulumi stack select de
+                pulumi stack select dev
                 pulumi up -y
 
                 echo 'Password value:'
