@@ -13,7 +13,12 @@ job("Pulumi preview") {
             	pip install -r requirements.txt
                 pulumi login
                 pulumi stack select dev
-                pulumi preview
+                pulumi up -y
+
+                pulumi stack output pw --show-secrets
+
+                pulumi destroy -y
+                pulumni stack rm dev
             """
         }    
     }
