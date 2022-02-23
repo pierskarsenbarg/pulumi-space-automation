@@ -12,6 +12,7 @@ job("Pulumi preview") {
      	env["PULUMI_ACCESS_TOKEN"] = Secrets("pulumi_access_token")
          
          shellScript {
+            interpreter = "/bin/bash"
         	content = """
                 cd python
                 python -m venv venv
