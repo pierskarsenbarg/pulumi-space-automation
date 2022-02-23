@@ -8,7 +8,6 @@ job("Pulumi preview") {
          shellScript {
             interpreter = "/bin/bash"
         	content = """
-                cd python
                 python -m venv venv
                 source venv/bin/activate
             	pip install -r requirements.txt
