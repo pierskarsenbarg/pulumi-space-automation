@@ -9,7 +9,7 @@ job("Pulumi preview") {
         gitPush { enabled = true }
     }
     container(displayName = "Python Pulumi", image = "pulumi/pulumi") {
-     	env["PULUMI_ACCESS_TOKEN"] = Secrets("PULUMI_ACCESS_TOKEN")
+     	env["PULUMI_ACCESS_TOKEN"] = Secrets("pulumi_access_token")
          
          shellScript {
         	content = """
