@@ -14,7 +14,7 @@ job("Pulumi preview") {
          shellScript {
         	content = """
                 cd python
-            	python pip install -r requirements.txt
+            	python3 pip install -r requirements.txt
                 pulumi login
                 pulumi stack select dev
                 pulumi preview
