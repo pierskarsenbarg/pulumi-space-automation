@@ -15,6 +15,7 @@ job("Create password") {
                 pulumi stack select dev
                 pulumi up -y
 
+                echo 'Password value:'
                 pulumi stack output pw --show-secrets
 
                 pulumi destroy -y
