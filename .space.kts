@@ -12,7 +12,7 @@ job("Create password") {
                 source venv/bin/activate
             	pip install -r requirements.txt
                 pulumi login
-                pulumi stack select dev
+                pulumi stack select de
                 pulumi up -y
 
                 echo 'Password value:'
@@ -21,5 +21,9 @@ job("Create password") {
                 pulumi destroy -y
             """
         }    
+    }
+
+    failOn {
+        nonZeroExitCode { enabled = true }
     }
 }
