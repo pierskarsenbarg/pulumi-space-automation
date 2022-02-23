@@ -24,6 +24,8 @@ job("Pulumi preview") {
           shellScript {
         	content = """
                 python --version
+                ls -l
+                pwd
             """
         }     
     }
