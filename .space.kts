@@ -18,7 +18,6 @@ job("Create password") {
                 pulumi stack output pw --show-secrets
 
                 pulumi destroy -y
-                pulumi stack rm dev
             """
         }    
     }
