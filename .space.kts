@@ -14,6 +14,8 @@ job("Pulumi preview") {
          shellScript {
         	content = """
                 cd python
+                python -m venv venv
+                source venv/bin/activate
             	pip install -r requirements.txt
                 pulumi login
                 pulumi stack select dev
